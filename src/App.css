@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* theme vars for simple dark/light */
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0b1220;
+}
+[data-theme="dark"] {
+  --bg: #0b1220;
+  --card: #0f1724;
+  --text: #e6eef8;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+}
