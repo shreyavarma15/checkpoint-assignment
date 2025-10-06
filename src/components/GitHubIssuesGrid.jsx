@@ -1,10 +1,11 @@
 import { useMemo } from "react";
 import { AgGridReact } from "ag-grid-react";
 import { AllCommunityModule, ModuleRegistry } from "ag-grid-community";
+import "ag-grid-community/styles/ag-theme-alpine.css";
 
 ModuleRegistry.registerModules([AllCommunityModule]);
 
-const GitHubIssuesGrid = ({ issues }) => {
+const GitHubIssuesGrid = ({ issues, theme }) => {
   const columnDefs = useMemo(
     () => [
       { headerName: "Number", field: "number", width: 110 },
@@ -57,7 +58,10 @@ const GitHubIssuesGrid = ({ issues }) => {
   );
 
   return (
-    <div className="ag-theme-alpine" style={{ width: "100%" }}>
+    <div
+      className={theme === "dark" ? "ag-theme-alpine-dark" : "ag-theme-alpine "}
+      style={{ width: "100%" }}
+    >
       <AgGridReact
         rowData={issues}
         columnDefs={columnDefs}
