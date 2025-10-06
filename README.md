@@ -2,6 +2,12 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+## Running the project in local
+
+- Clone the project using this link- [https://github.com/shreyavarma15/checkpoint-assignment.git]
+- Run the command "npm install" to install all the dependencies
+- To run the project in the local environment, execute the command- "npm run dev"
+
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
