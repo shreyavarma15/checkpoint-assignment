@@ -42,15 +42,23 @@ function App() {
   }, []);
 
   return (
-    <div
+    <main
       className={`p-6 min-h-screen ${
         theme === THEME.DARK
           ? "bg-gray-900 text-gray-100"
           : "bg-white text-gray-900"
       } transition-colors duration-300`}
+      role="main"
+      aria-label="GitHub Issues Main Content"
     >
-      <div className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl font-bold">Facebook React GitHub Issues</h1>
+      <header className="flex justify-between items-center mb-4" role="banner">
+        <h1
+          className="text-2xl font-bold"
+          tabIndex={0}
+          aria-label="Facebook React GitHub Issues"
+        >
+          Facebook React GitHub Issues
+        </h1>
         <button
           onClick={toggleTheme}
           className={`px-4 py-2 cursor-pointer rounded border transition ${
@@ -58,28 +66,34 @@ function App() {
               ? "bg-gray-800 text-gray-100 border-gray-700"
               : "bg-gray-200 text-gray-900 border-gray-300"
           }`}
+          aria-label={buttonText}
+          aria-pressed={theme === THEME.DARK}
         >
           {buttonText}
         </button>
-      </div>
+      </header>
       {loading ? (
         <p
           className={`text-center ${
             theme === THEME.DARK ? "text-gray-400" : "text-gray-600"
           }`}
+          role="status"
+          aria-live="polite"
         >
           Loading issues...
         </p>
       ) : (
         <ErrorBoundary
           fallback={
-            <div className="text-center">Could not load issues grid.</div>
+            <div className="text-center" role="alert">
+              Could not load issues grid.
+            </div>
           }
         >
           <GitHubIssuesGrid issues={issues} theme={theme} />
         </ErrorBoundary>
       )}
-    </div>
+    </main>
   );
 }
 

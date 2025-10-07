@@ -58,9 +58,10 @@ const GitHubIssuesGrid = ({ issues, theme }) => {
   );
 
   return (
-    <div
-      className={theme === "dark" ? "ag-theme-alpine-dark" : "ag-theme-alpine "}
+    <section
+      className={theme === "dark" ? "ag-theme-alpine-dark" : "ag-theme-alpine"}
       style={{ width: "100%" }}
+      aria-label="GitHub Issues Data Grid"
     >
       <AgGridReact
         rowData={issues}
@@ -74,8 +75,9 @@ const GitHubIssuesGrid = ({ issues, theme }) => {
           floatingFilter: true,
           resizable: true,
         }}
+        aria-label="Issues Table"
       />
-    </div>
+    </section>
   );
 };
 
