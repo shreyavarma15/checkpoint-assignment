@@ -12,7 +12,7 @@
 
 ## AI Usage
 
-- ChatGpt used for setup of tailwind and Vitest
+- ChatGpt used for setup and configuration of tailwind and Vitest
 - Github Copilot used for adding Tailwind css and unit test cases.
 
 ## Team Practices & Scaling
