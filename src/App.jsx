@@ -3,20 +3,23 @@ import "./App.css";
 import { issuesUrl } from "./api/service";
 import GitHubIssuesGrid from "./components/GitHubIssuesGrid";
 import ErrorBoundary from "./components/ErrorBoundary";
+import { THEME, BUTTON_TEXT } from "./constants";
 
 function App() {
   const [issues, setIssues] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [theme, setTheme] = useState("light");
-  const [buttonText, setButtonText] = useState("Dark Mode");
+  const [theme, setTheme] = useState(THEME.LIGHT);
+  const [buttonText, setButtonText] = useState(BUTTON_TEXT.DARK_MODE);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
-    setButtonText(theme === "light" ? "Light Mode" : "Dark Mode");
+    setTheme((prev) => (prev === THEME.LIGHT ? THEME.DARK : THEME.LIGHT));
+    setButtonText(
+      theme === THEME.LIGHT ? BUTTON_TEXT.LIGHT_MODE : BUTTON_TEXT.DARK_MODE
+    );
   };
 
   const getIssues = async () => {
@@ -41,7 +44,7 @@ function App() {
   return (
     <div
       className={`p-6 min-h-screen ${
-        theme === "dark"
+        theme === THEME.DARK
           ? "bg-gray-900 text-gray-100"
           : "bg-white text-gray-900"
       } transition-colors duration-300`}
@@ -51,7 +54,7 @@ function App() {
         <button
           onClick={toggleTheme}
           className={`px-4 py-2 cursor-pointer rounded border transition ${
-            theme === "dark"
+            theme === THEME.DARK
               ? "bg-gray-800 text-gray-100 border-gray-700"
               : "bg-gray-200 text-gray-900 border-gray-300"
           }`}
@@ -62,7 +65,7 @@ function App() {
       {loading ? (
         <p
           className={`text-center ${
-            theme === "dark" ? "text-gray-400" : "text-gray-600"
+            theme === THEME.DARK ? "text-gray-400" : "text-gray-600"
           }`}
         >
           Loading issues...

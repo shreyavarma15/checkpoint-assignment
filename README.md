@@ -1,22 +1,22 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
 ## Running the project in local
 
 - Clone the project using this link- [https://github.com/shreyavarma15/checkpoint-assignment.git]
 - Run the command "npm install" to install all the dependencies
 - To run the project in the local environment, execute the command- "npm run dev"
 
-Currently, two official plugins are available:
+## React + Vite tech stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Vite is faster than webpack, as it updates only the changed modules during development resulting in instant HMR.
+- Ag-grid library is used to display Github issues data as it provides in-built search, sort, filter and pagination. It is also efficient to use with scaling data.
+- React Testing Library + Vitest is used for writing unit test cases as Jest is not compatible with Vite's configuration.
 
-## React Compiler
+## AI Usage
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- ChatGpt used for setup of tailwind and Vitest
+- Github Copilot used for adding Tailwind css and unit test cases.
 
-## Expanding the ESLint configuration
+## Team Practices & Scaling
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- With the growing project features and team size, there should be restriction on the main branch. Code can be merged to main branch only after PR approval from feature branches.
+- PR review should be compulsory from minimum 2 team members and it should be reviewed on the basis of functionality, code test coverage and reusability of code.
+- SonarQube can be setup for ensuring code quality and identifying vulnerabilities and critical issues.
