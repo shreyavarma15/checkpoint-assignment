@@ -6,7 +6,7 @@
 
 ## React + Vite tech stack
 
-- Vite is faster than webpack, as it updates only the changed modules during development resulting in instant HMR.
+- Vite is faster than webpack, as it updates only the changed modules during development resulting in instant HMR. (Ref-[https://dualite.dev/blog/vite-vs-webpack])
 - Ag-grid library is used to display Github issues data as it provides in-built search, sort, filter and pagination. It is also efficient to use with scaling data.
 - React Testing Library + Vitest is used for writing unit test cases as Jest is not compatible with Vite's configuration.
 
